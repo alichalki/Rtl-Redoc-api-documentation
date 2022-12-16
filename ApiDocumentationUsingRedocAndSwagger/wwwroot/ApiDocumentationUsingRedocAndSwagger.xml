@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ApiDocumentationUsingRedocAndSwagger</name>
+    </assembly>
+    <members>
+        <member name="T:ApiDocumentationUsingRedocAndSwagger.Controllers.WeatherForecastController">
+            <summary>
+            this comment for test
+            </summary>
+        </member>
+        <member name="M:ApiDocumentationUsingRedocAndSwagger.Controllers.WeatherForecastController.GetOrder(System.Int32)">
+            <summary>
+            Get an order by Order ID
+            </summary>
+            <param name="orderId"></param>
+            <returns>The order object</returns>
+        </member>
+        <member name="T:ApiDocumentationUsingRedocAndSwagger.UserAccount">
+            <summary>
+            User Model
+            </summary> 
+        </member>
+    </members>
+</doc>

@@ -21,3 +21,16 @@ h1, h2, h3, h4, h6, p, table th, .redoc-markdown {
     max-height: 50px !important;
     margin: 20px auto;
 }
+
+.redoc_table {
+    text-align: right;
+    direction: rtl;
+}
+
+.redoc_table_title {
+    color: #333 !important;
+    margin: 70px 0 20px 0 !important;
+}
+
+.redoc_table_description {
+}

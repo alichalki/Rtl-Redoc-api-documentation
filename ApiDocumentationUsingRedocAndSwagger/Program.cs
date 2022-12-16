@@ -1,3 +1,4 @@
+using ApiDocumentationUsingRedocAndSwagger;
 using Microsoft.OpenApi.Any;
 using Microsoft.OpenApi.Interfaces;
 using Microsoft.OpenApi.Models;
@@ -17,6 +18,12 @@ builder.Services.AddSwaggerGen(options =>
         {
             //This will instruct a developer reading about the API on who to contact in case of issues or questions.
             Title = "ChalkiTestApi",
+            Description = "<h1 class='redoc_table_title'>فهرست کدهای وضعیت</h1>" +
+            "<p class='redoc_table_description'>چالکی تست از <a href=\'https://en.wikipedia.org/wiki/List_of_HTTP_status_codes\'>کدهای وضعیت HTTP</a> برای نشان دادن موفق یا ناموفق بودن درخواست&zwnj;های شما استفاده می&zwnj;کند.\r\nدر صورت ناموفق بودن درخواست، چالکی تست با استفاده از کد وضعیت مناسب، خطایی برمی&zwnj;گرداند.</p>" +
+            "<table class='redoc_table'>\r\n<thead>\r\n<tr>\r\n<th>کد وضعیت</th>\r\n<th>توضیحات</th>\r\n</tr>\r\n</thead>\r\n<tbody><tr>\r\n<td><code>2xx</code></td>\r\n<td>عملیات با موفقیت انجام شد.</td>\r\n</tr>\r\n<tr>\r\n<td><code>4xx</code></td>\r\n<td>اطلاعات ارسال شده صحیح نیست.</td>\r\n</tr>\r\n<tr>\r\n<td><code>5xx</code></td>\r\n<td>مشکلی در سرور چالکی تست رخ داده است.</td>\r\n</tr>\r\n</tbody></table>" +
+            "<h1 class='redoc_table_title'>فهرست کدهای خطا</h1>" +
+            "<p>در صورت بروز خطا در فراخوانی وب&zwnj;سرویس، پاسخی مطابق با جدول زیر دریافت خواهید کرد.</p>" +
+            "<table class='redoc_table'>\r\n<thead>\r\n<tr>\r\n<th>کد خطا</th>\r\n<th>توضیحات</th>\r\n</tr>\r\n</thead>\r\n<tbody><tr>\r\n<td><code>server_error</code></td>\r\n<td>یک خطای داخلی رخ داده است.</td>\r\n</tr>\r\n<tr>\r\n<td><code>validation_error</code></td>\r\n<td>اطلاعات ارسال شده صحیح نیست.</td>\r\n</tr>\r\n<tr>\r\n<td><code>authentication_error</code></td>\r\n<td>توکن ارسالی نامعتبر است.</td>\r\n</tr>\r\n<tr>\r\n<td><code>authorization_error</code></td>\r\n<td>به آدرس مورد نظر دسترسی ندارید.</td>\r\n</tr>\r\n<tr>\r\n<td><code>not_found</code></td>\r\n<td>آدرس مورد نظر پیدا نشد.</td>\r\n</tr>\r\n<tr>\r\n<td><code>bad_request</code></td>\r\n<td>درخواست نامعتبر است.</td>\r\n</tr>\r\n<tr>\r\n<td><code>method_not_allowed</code></td>\r\n<td>متد درخواست معتبر نیست.</td>\r\n</tr>\r\n</tbody></table>",
             Version = "v1",
 
             //use custome logo to redoc api
@@ -28,7 +35,7 @@ builder.Services.AddSwaggerGen(options =>
                    { "altText", new OpenApiString("api-logo")}
                 }
               }
-            }
+            },
         });
 
 
@@ -58,7 +65,7 @@ if (app.Environment.IsDevelopment())
     app.UseReDoc(options =>
     {
         //config redoc.
-
+        options.ConfigObject.AdditionalItems.Add("testtt", "testtt");
         options.RoutePrefix = "docs";
         options.DocumentTitle = "ChalkiTestDocumentation";
         options.SpecUrl = "/swagger/v1/swagger.json";
