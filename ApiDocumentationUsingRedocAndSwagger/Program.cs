@@ -16,12 +16,10 @@ builder.Services.AddSwaggerGen(options =>
         new OpenApiInfo
         {
             //This will instruct a developer reading about the API on who to contact in case of issues or questions.
-
             Title = "ChalkiTestApi",
             Version = "v1",
 
             //use custome logo to redoc api
-
             Extensions = new Dictionary<string, IOpenApiExtension>
             {
               {"x-logo", new OpenApiObject
@@ -37,8 +35,10 @@ builder.Services.AddSwaggerGen(options =>
     //I have added two variables for getting the generated Documentation file for the current assembly and setting the path using the base directory.
     var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
     var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+
     ////this telling SwaggerGen() to include the XML comments generated at startup for Swagger.
     options.IncludeXmlComments(xmlPath);
+
     //enable annotations to make some more documentation for our api-docs
     options.EnableAnnotations();
 });
@@ -55,14 +55,12 @@ if (app.Environment.IsDevelopment())
     options.SwaggerEndpoint("/swagger/v1/swagger.json",
     "Swagger Demo Documentation v1"));
 
-
-
     app.UseReDoc(options =>
     {
         //config redoc.
 
         options.RoutePrefix = "docs";
-        options.DocumentTitle = "سند تست";
+        options.DocumentTitle = "ChalkiTestDocumentation";
         options.SpecUrl = "/swagger/v1/swagger.json";
         options.ConfigObject.HideDownloadButton = true;
         options.IndexStream = () => typeof(Program).Assembly
