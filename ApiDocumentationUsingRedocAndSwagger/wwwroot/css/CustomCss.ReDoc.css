@@ -1,0 +1,23 @@
+﻿
+@font-face {
+    font-family: 'IRANSansWeb';
+    src: url('../font/IRANSansWeb.woff2') format('woff2'); /* Super Modern Browsers */
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+* {
+    font-family: 'IRANSansWeb' !important;
+}
+
+h1, h2, h3, h4, h6, p, table th, .redoc-markdown {
+    direction: rtl;
+    text-align: right !important;
+}
+
+.hQrVZb > img:first-child {
+    max-width: 50px !important;
+    max-height: 50px !important;
+    margin: 20px auto;
+}
